@@ -9,7 +9,7 @@ GITHUB_REPO = "java_pro"  # Replace with your repo name
 BRANCH = "main"  # Usually 'main' or 'master'
 
 # Get the GitHub token securely from Streamlit secrets
-TOKEN = "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"  # Streamlit automatically pulls from secrets.toml
+TOKEN = st.secrets["github_token"]
 headers = {"Authorization": f"token {TOKEN}"}
 
 
@@ -92,5 +92,6 @@ else:
                 st.success("✅ File updated successfully on GitHub!")
             else:
                 st.error(f"❌ Failed to update file: {result}")
+
 
 
